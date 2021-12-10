@@ -7799,16 +7799,38 @@ textarea {
 	margin: 0;
 	border: none;
 	line-height: 1.2;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: var(--font-cs-bold);
 	font-weight: 700;
 	color: var(--color-heading-4);
 	letter-spacing: -0.5px;
 	-webkit-box-shadow: 0px 10px 30px 0px rgba(71, 59, 240, 0.1);
 	box-shadow: 0px 10px 30px 0px rgba(71, 59, 240, 0.1);
+	background-color: #E6E6FE;
+	padding: 20px 25px;
+	display: block;
+}
+
+.service-tab .service-tab-nav .nav-tabs .nav-sub-link {
+	margin: 0;
+	border: none;
+	line-height: 31.875px;
+	font-size: 17px;
+	font-weight: 100;
+	-webkit-box-shadow: 0px 10px 30px 0px rgba(71, 59, 240, 0.1);
+	box-shadow: 0px 10px 30px 0px rgba(71, 59, 240, 0.1);
 	background-color: var(--color-white);
 	padding: 20px 25px;
 	display: block;
+}
+
+
+.nav-sub-link li:before {
+    content: "\f00c";
+    margin-right: 10px;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 800;
+    font-size: 12px;
 }
 
 .service-tab .service-tab-nav .nav-tabs .nav-link i {
