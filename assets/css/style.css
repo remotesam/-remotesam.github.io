@@ -1518,10 +1518,10 @@ textarea {
 
 .template-header .navbar-toggler {
 	width: 55px;
-	padding: 10px;
-	font-size: 0;
-	border: 2px solid var(--color-heading);
-	border-radius: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+	font-size: 0;	
 }
 
 .template-header .navbar-toggler span {
