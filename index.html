@@ -493,8 +493,45 @@
 
         var link = document.getElementById("play-store-link");
         var stringUrl = 'https://play.google.com/store/apps/details?id=com.bestmate.pro';
+        var utmSourceString = '';
+        var utmMediumString = '';
+        var utmCampaignString = '';        
+        var keys = 0;
         if (qs.utm_source) {
-            stringUrl = stringUrl + '&referrer=utm_source%3D' + qs.utm_source;
+            keys = keys + 1;
+            utmSourceString = utmSourceString + 'utm_source%3D' + qs.utm_source;
+        }
+        if (qs.utm_medium) {
+            keys = keys + 1;
+            utmMediumString = utmMediumString + 'utm_medium%3D' + qs.utm_medium;
+        }
+        if (qs.utm_campaign) {
+            keys = keys + 1;
+            utmCampaignString = utmCampaignString + 'utm_campaign%3D' + qs.utm_campaign;
+        }
+        if (keys > 0) {
+            stringUrl = stringUrl + '&referrer=';
+            if (qs.utm_source) {
+                stringUrl = stringUrl + utmSourceString;
+                keys = keys - 1;
+                if (keys > 0) {
+                    stringUrl = stringUrl + '%26';
+                }
+            }
+            if (qs.utm_medium) {
+                stringUrl = stringUrl + utmMediumString;                
+                keys = keys - 1;
+                if (keys > 0) {
+                    stringUrl = stringUrl + '%26';
+                }
+            }
+            if (qs.utm_campaign) {        
+                stringUrl = stringUrl + utmCampaignString;            
+                keys = keys - 1;
+                if (keys > 0) {
+                    stringUrl = stringUrl + '%26';
+                }
+            }
         }
         link.setAttribute('href', stringUrl);
     </script>
